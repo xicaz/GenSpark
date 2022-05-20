@@ -8,7 +8,7 @@ public class BoardingPassGenerator extends JFrame {
     private JLabel textTitle;
     private JTextField textName;
     private JTextField textEmail;
-    private JButton buttonUpdate;s
+    private JButton buttonUpdate;
     private JButton buttonExport;
     private JRadioButton maleRadioButton;
     private JRadioButton femaleRadioButton;
