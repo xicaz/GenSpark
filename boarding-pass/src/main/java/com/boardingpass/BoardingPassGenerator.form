@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.boardingpass.BoardingPassGenerator">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="620" height="659"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="1a964" binding="panelTop" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14079703"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="66ff6" class="javax.swing.JLabel" binding="textTitle">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <enabled value="true"/>
+              <font name="Space Mono" size="24" style="0"/>
+              <foreground color="-1"/>
+              <text value="Boarding Ticket Generator"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="f016" binding="panelBottom" layout-manager="GridLayoutManager" row-count="19" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="c599c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14"/>
+              <text value="Name"/>
+            </properties>
+          </component>
+          <component id="f213f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14"/>
+              <text value="Email"/>
+            </properties>
+          </component>
+          <component id="f1bad" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14"/>
+              <text value="Phone Number"/>
+            </properties>
+          </component>
+          <component id="e4461" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14"/>
+              <text value="Gender [ F, M, N ]"/>
+            </properties>
+          </component>
+          <component id="a38fc" class="javax.swing.JTextField" binding="textName">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="1c04b" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+              <text value="Age"/>
+            </properties>
+          </component>
+          <component id="dff35" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="10" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+              <text value="Date [ DD/MM/YYYY ]"/>
+            </properties>
+          </component>
+          <component id="bbd49" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="14" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+              <text value="Destination"/>
+            </properties>
+          </component>
+          <component id="6afc1" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="16" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+              <text value="Departure Time [ 24:00 ]"/>
+            </properties>
+          </component>
+          <component id="f4756" class="javax.swing.JTextField" binding="textEmail">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="ec475" class="javax.swing.JButton" binding="buttonExport">
+            <constraints>
+              <grid row="18" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <font name="Space Mono" size="14" style="0"/>
+              <foreground color="-16777216"/>
+              <text value="Clear"/>
+            </properties>
+          </component>
+          <component id="2e703" class="javax.swing.JTextField" binding="textAge">
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="ad781" class="javax.swing.JTextField" binding="textPhone">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="a081d" class="javax.swing.JTextField" binding="textDate">
+            <constraints>
+              <grid row="11" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="c7d4b" class="javax.swing.JTextField" binding="textDestination">
+            <constraints>
+              <grid row="15" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="38e28" class="javax.swing.JTextField" binding="textDepartureTime">
+            <constraints>
+              <grid row="17" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="bcfa7" class="javax.swing.JTextField" binding="textGender">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="e72d3" class="javax.swing.JButton" binding="buttonSave">
+            <constraints>
+              <grid row="18" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <font name="Space Mono" size="14" style="0"/>
+              <foreground color="-16777216"/>
+              <hideActionText value="false"/>
+              <text value="Save"/>
+            </properties>
+          </component>
+          <component id="63136" class="javax.swing.JButton" binding="buttonCreate">
+            <constraints>
+              <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16777216"/>
+              <focusable value="false"/>
+              <font name="Space Mono" size="14" style="0"/>
+              <foreground color="-16777216"/>
+              <selected value="true"/>
+              <text value="Create"/>
+            </properties>
+          </component>
+          <component id="e6a8f" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="12" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+              <text value="Origin"/>
+            </properties>
+          </component>
+          <component id="be385" class="javax.swing.JTextField" binding="textOrigin">
+            <constraints>
+              <grid row="13" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+            </properties>
+          </component>
+          <component id="44f58" class="javax.swing.JTextField" binding="textTotalMiles">
+            <constraints>
+              <grid row="15" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="3f0c7" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="14" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Space Mono" size="14" style="0"/>
+              <text value="Total Miles"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b27a9" binding="panelList" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="ca561" class="javax.swing.JList" binding="listTickets">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-2302756"/>
+              <font name="Space Mono" size="14" style="0"/>
+              <foreground color="-1"/>
+              <inheritsPopupMenu value="false"/>
+              <model>
+                <item value="listTickets:JList"/>
+              </model>
+              <selectionMode value="0"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="daf39" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+  <buttonGroups>
+    <group name="buttonRadio">
+      <member id="91ce0"/>
+      <member id="e3a6c"/>
+      <member id="551f1"/>
+    </group>
+  </buttonGroups>
+</form>
