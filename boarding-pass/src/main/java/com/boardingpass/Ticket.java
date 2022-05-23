@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Ticket {
-    private int arrivalTime;
+    private LocalTime arrivalTime;
     private String name;
     private String email;
     private String phoneNumber;
@@ -111,11 +111,11 @@ public class Ticket {
         this.totalMiles = totalMiles;
     }
 
-    public int getArrivalTime() {
+    public LocalTime getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(int arrivalTime) {
+    public void setArrivalTime(LocalTime arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 

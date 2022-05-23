@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
@@ -83,6 +84,7 @@ public class BoardingPassGenerator extends JFrame{
                     t.setPhoneNumber(textPhone.getText());
                     t.setAge(textAge.getText());
                     refreshTicketsList();
+                    createTicketFile(t);
                 } else {
                     System.out.println("Can only save existing if an item is selected in the list");
                 }
@@ -94,17 +96,10 @@ public class BoardingPassGenerator extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                int ticketNumber = listTickets.getSelectedIndex();
-
-                if (ticketNumber >= 0){
 
                     listTicketsModel.removeAllElements();
                     System.out.println("Removing people");
 
-
-                } else {
-                    System.out.println("List already empty");
-                }
 
 
             }
@@ -216,17 +211,47 @@ public class BoardingPassGenerator extends JFrame{
         refreshTicketsList();
     }
 
-    public int calculateETA(Ticket t){
+    public double calculateTicketPrice(Ticket t){
+
+
+        // Average US domestic round trip flight cost
+        double ticketPrice = 330;
+
+        //  the case-sensitivity edge case
+
+        String gender = t.getGender().toUpperCase();
+
+        // if female, price is reduced 25% >> which 75% of original
+
+        if (gender == "F") {
+            ticketPrice = (int) (ticketPrice * .75);
+        }
+
+        int age = Integer.parseInt(t.getAge());
+
+
+        if(age <= 12){
+            ticketPrice = ticketPrice *.5;
+        }
+        if(age >= 60){
+            ticketPrice = ticketPrice *.4;
+        }
+
+        return ticketPrice;
+    }
+
+    public LocalTime calculateETA(Ticket t){
 
         int totalMiles = Integer.parseInt(t.getTotalMiles());
-        int departureTime = t.getDepartureTime();
+
+        LocalTime departureTime = t.getDepartureTime();
 
 
         // Average airplane speed = 460-575mph = Rounded to 500mph
 
         eta = (int) (totalMiles / 500.00);
 
-        t.setArrivalTime(departureTime + eta);
+        t.setArrivalTime(departureTime.plusMinutes(eta));
 
         System.out.println("The flight will take " + eta + " hours to complete!");
 
@@ -234,23 +259,13 @@ public class BoardingPassGenerator extends JFrame{
     }
 
 
-
-    public void buttonSaveClick (ActionEvent e){
-        Ticket t = new Ticket(textName.getText(), textEmail.getText(), textPhone.getText(), textOrigin.getText(), textDestination.getText(), textTotalMiles.getText(), textGender.getText(), textAge.getText(), textDate.getText(), textDepartureTime.getText());
-
-        addTicket(t);
-
-        calculateETA(t);
-
-        t.setBoardingPass(getSaltString());
-
-        refreshTicketsList();
+    public void createTicketFile(Ticket t){
 
         // text for generating text file
 
         String newLine = System.getProperty("line.separator");
         String string = t.getBoardingPass();
-        String text = string.concat("Name: "+ textName.getText())
+        String text = string.concat(newLine + "Name: "+ textName.getText())
                 .concat(newLine)
                 .concat("Email: " + textEmail.getText())
                 .concat(newLine)
@@ -266,12 +281,12 @@ public class BoardingPassGenerator extends JFrame{
                 .concat(newLine)
                 .concat("Destination "+ textDestination.getText())
                 .concat(newLine)
-                .concat("Arrival Time: " + String.valueOf(t.getArrivalTime()));
-
-
+                .concat("Arrival Time: " + String.valueOf(t.getArrivalTime()))
+                .concat(newLine)
+                .concat("Price: " + price);
 
         try {
-            PrintWriter output = new PrintWriter("output.txt");
+            PrintWriter output = new PrintWriter(string.concat("_ticket.txt"));
 
             output.print(text);
 
@@ -282,6 +297,23 @@ public class BoardingPassGenerator extends JFrame{
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
+    }
+
+    public void buttonSaveClick (ActionEvent e){
+        Ticket t = new Ticket(textName.getText(), textEmail.getText(), textPhone.getText(), textOrigin.getText(), textDestination.getText(), textTotalMiles.getText(), textGender.getText(), textAge.getText(), textDate.getText(), textDepartureTime.getText());
+
+        addTicket(t);
+
+        calculateETA(t);
+
+        int price = (int) calculateTicketPrice(t);
+
+        t.setBoardingPass(getSaltString());
+
+        refreshTicketsList();
+
+        createTicketFile(t);
 
     }
 
@@ -318,34 +350,6 @@ public class BoardingPassGenerator extends JFrame{
 
 
 
-    public double calculateTicketPrice(){
-
-
-        // Average US domestic round trip flight cost
-        double ticketPrice = 330;
-
-        //  the case-sensitivity edge case
-
-        String gender = textGender.getText().toUpperCase();
-
-        // if female, price is reduced 25% >> which 75% of original
-
-        if (gender == "F") {
-            ticketPrice = (int) (ticketPrice * .75);
-        }
-
-        int age = Integer.parseInt(textAge.getText());
-
-
-        if(age <= 12){
-            ticketPrice = ticketPrice *.5;
-        }
-        if(age >= 60){
-            ticketPrice = ticketPrice *.4;
-        }
-
-        return ticketPrice;
-    }
 
 
     // randomizer using salt method algo
