@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -216,20 +215,43 @@ public class BoardingPassGenerator extends JFrame{
         refreshTicketsList();
     }
 
+    public int calculateETA(){
+        int ticketNumber = listTickets.getSelectedIndex();
+        Ticket t  = tickets.get(ticketNumber);
+
+        int totalMiles = Integer.parseInt(textTotalMiles.getText());
+        int departureTime = Integer.parseInt(textDepartureTime.getText());
+
+        double temp = 0;
+
+
+        // Average airplane speed = 460-575mph = Rounded to 500mph
+
+        eta = (int) (totalMiles / 500.00);
+
+        t.setArrivalTime(departureTime + eta);
+
+        System.out.println("The flight will take " + eta + " hours to complete!");
+
+        return t.getArrivalTime();
+    }
+
+
 
     public void buttonSaveClick (ActionEvent e){
         Ticket t = new Ticket(textName.getText(), textEmail.getText(), textPhone.getText(), textOrigin.getText(), textDestination.getText(), textTotalMiles.getText(), textGender.getText(), textAge.getText(), textDate.getText(), textDepartureTime.getText());
 
         addTicket(t);
 
+        calculateETA();
+
         refreshTicketsList();
 
         // text for generating text file
 
         String newLine = System.getProperty("line.separator");
-
-        String text = t.getBoardingPass()
-                .concat(textName.getText())
+        String string = "";
+        String text = string.concat(textName.getText())
                 .concat(newLine)
                 .concat(textEmail.getText())
                 .concat(newLine)
@@ -245,6 +267,7 @@ public class BoardingPassGenerator extends JFrame{
                 .concat(newLine)
                 .concat(String.valueOf(t.getArrivalTime()));
 
+
         System.out.println(text);
 
         try {
@@ -253,7 +276,7 @@ public class BoardingPassGenerator extends JFrame{
             output.print(text);
 
             output.close();
-            System.out.println("EXPORTED");
+
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -293,25 +316,6 @@ public class BoardingPassGenerator extends JFrame{
 
 
 
-    public void calculateETA(){
-        int ticketNumber = listTickets.getSelectedIndex();
-        Ticket t  = tickets.get(ticketNumber);
-
-        int totalMiles = Integer.parseInt(textTotalMiles.getText());
-        int departureTime = Integer.parseInt(textDepartureTime.getText());
-
-        double temp = 0;
-
-
-        // Average airplane speed = 460-575mph = Rounded to 500mph
-
-        eta = (int) (totalMiles / 500.00);
-
-        t.setArrivalTime(departureTime + eta);
-
-        System.out.println("The flight will take " + eta + " hours to complete!");
-
-    }
 
     public double calculateTicketPrice(){
 
