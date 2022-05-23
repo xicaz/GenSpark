@@ -147,7 +147,7 @@ public class Ticket {
     }
 
     public void setDate(String date){
-        this.date = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        this.date = LocalDate.parse(date, DateTimeFormatter.ofPattern("MM/dd/yyyy"));
     }
 
     public LocalTime getDepartureTime() {

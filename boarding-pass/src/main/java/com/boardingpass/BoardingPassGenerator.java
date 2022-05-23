@@ -52,6 +52,8 @@ public class BoardingPassGenerator extends JFrame{
         this.setContentPane(this.panelMain);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
+
+ //
         this.ticketPrice = 350;
         this.eta = 0;
         this.boardingPassNumber = 0;
@@ -91,18 +93,17 @@ public class BoardingPassGenerator extends JFrame{
         buttonExport.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Test");
+
                 int ticketNumber = listTickets.getSelectedIndex();
+
                 if (ticketNumber >= 0){
 
-
-
-
-//                    t.setBoardingPass(getSaltString());
+                    listTicketsModel.removeAllElements();
+                    System.out.println("Removing people");
 
 
                 } else {
-                    System.out.println("Can only save existing if an item is selected in the list");
+                    System.out.println("List already empty");
                 }
 
 
@@ -148,9 +149,9 @@ public class BoardingPassGenerator extends JFrame{
     private boolean saveFileFromString(String filename, String data) {
         try {
             FileWriter fw = new FileWriter(filename);
-            PrintWriter output = new PrintWriter(fw);
-            output.println( data );
-            output.close();
+            PrintWriter out = new PrintWriter(fw);
+            out.println( data );
+            out.close();
             fw.close();
             return true;
         } catch(Exception e) {
@@ -215,14 +216,10 @@ public class BoardingPassGenerator extends JFrame{
         refreshTicketsList();
     }
 
-    public int calculateETA(){
-        int ticketNumber = listTickets.getSelectedIndex();
-        Ticket t  = tickets.get(ticketNumber);
+    public int calculateETA(Ticket t){
 
-        int totalMiles = Integer.parseInt(textTotalMiles.getText());
-        int departureTime = Integer.parseInt(textDepartureTime.getText());
-
-        double temp = 0;
+        int totalMiles = Integer.parseInt(t.getTotalMiles());
+        int departureTime = t.getDepartureTime();
 
 
         // Average airplane speed = 460-575mph = Rounded to 500mph
@@ -243,32 +240,35 @@ public class BoardingPassGenerator extends JFrame{
 
         addTicket(t);
 
-        calculateETA();
+        calculateETA(t);
+
+        t.setBoardingPass(getSaltString());
 
         refreshTicketsList();
 
         // text for generating text file
 
         String newLine = System.getProperty("line.separator");
-        String string = "";
-        String text = string.concat(textName.getText())
+        String string = t.getBoardingPass();
+        String text = string.concat("Name: "+ textName.getText())
                 .concat(newLine)
-                .concat(textEmail.getText())
+                .concat("Email: " + textEmail.getText())
                 .concat(newLine)
-                .concat(textAge.getText())
+                .concat("Age: " + textAge.getText())
                 .concat(newLine)
-                .concat(textGender.getText())
+                .concat("Gender: "+ textGender.getText())
                 .concat(newLine)
-                .concat(textPhone.getText())
+                .concat("Phone Number: "+ textPhone.getText())
                 .concat(newLine)
-                .concat(textOrigin.getText())
+                .concat("Date: " + textDate.getText())
                 .concat(newLine)
-                .concat(textDestination.getText())
+                .concat("Origin: "+ textOrigin.getText())
                 .concat(newLine)
-                .concat(String.valueOf(t.getArrivalTime()));
+                .concat("Destination "+ textDestination.getText())
+                .concat(newLine)
+                .concat("Arrival Time: " + String.valueOf(t.getArrivalTime()));
 
 
-        System.out.println(text);
 
         try {
             PrintWriter output = new PrintWriter("output.txt");
@@ -277,6 +277,7 @@ public class BoardingPassGenerator extends JFrame{
 
             output.close();
 
+            System.out.println("output exported");
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -383,8 +384,8 @@ public class BoardingPassGenerator extends JFrame{
 
 //    public Ticket(String name, String email, String phoneNumber, String destination, String gender, String age, String date, String departureTime) {
 
-        Ticket paris = new Ticket("Anna", "anna@email.com", "5103333131", "Paris","NYC","3628","F", "26", "05/05/2022", "08:30");
-        boardingPassGenerator.addTicket(paris);
+//        Ticket paris = new Ticket("Anna", "anna@email.com", "5103333131", "Paris","NYC","3628","F", "26", "05/05/2022", "08:30");
+//        boardingPassGenerator.addTicket(paris);
 
 
     }

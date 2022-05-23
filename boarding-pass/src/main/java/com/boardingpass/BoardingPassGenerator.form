@@ -101,7 +101,7 @@
             </constraints>
             <properties>
               <font name="Space Mono" size="14" style="0"/>
-              <text value="Date [ DD/MM/YYYY ]"/>
+              <text value="Date [ MM/DD/YYYY ]"/>
             </properties>
           </component>
           <component id="bbd49" class="javax.swing.JLabel">
