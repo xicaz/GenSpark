@@ -28,7 +28,6 @@ public class BoardingPassGenerator extends JFrame{
     private JLabel textTitle;
     private JTextField textName;
     private JTextField textEmail;
-//    private JButton buttonCreate;
     private JButton buttonExport;
     private JButton buttonSave;
     private JTextField textAge;
@@ -211,6 +210,9 @@ public class BoardingPassGenerator extends JFrame{
         refreshTicketsList();
     }
 
+
+
+
     public double calculateTicketPrice(Ticket t){
 
 
@@ -237,8 +239,11 @@ public class BoardingPassGenerator extends JFrame{
             ticketPrice = ticketPrice *.4;
         }
 
+        t.setTicketPrice((int) ticketPrice);
+
         return ticketPrice;
     }
+
 
     public LocalTime calculateETA(Ticket t){
 
@@ -307,7 +312,7 @@ public class BoardingPassGenerator extends JFrame{
 
         calculateETA(t);
 
-        int price = (int) calculateTicketPrice(t);
+        calculateTicketPrice(t);
 
         t.setBoardingPass(getSaltString());
 
@@ -344,14 +349,6 @@ public class BoardingPassGenerator extends JFrame{
 
 
 
-
-//     Method to calculate ETA
-
-
-
-
-
-
     // randomizer using salt method algo
     private String getSaltString() {
         String saltChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -374,7 +371,7 @@ public class BoardingPassGenerator extends JFrame{
     public static void main(String[] args) {
 
         printLookAndFeels();
-//        View view = new View("Contacts app");
+
         BoardingPassGenerator boardingPassGenerator = new BoardingPassGenerator();
 
         try {
@@ -386,7 +383,6 @@ public class BoardingPassGenerator extends JFrame{
         boardingPassGenerator.setVisible(true);
 
 
-//    public Ticket(String name, String email, String phoneNumber, String destination, String gender, String age, String date, String departureTime) {
 
 //        Ticket paris = new Ticket("Anna", "anna@email.com", "5103333131", "Paris","NYC","3628","F", "26", "05/05/2022", "08:30");
 //        boardingPassGenerator.addTicket(paris);

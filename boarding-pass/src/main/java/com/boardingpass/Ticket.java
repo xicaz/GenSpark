@@ -5,6 +5,8 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class Ticket {
+
+    private int ticketPrice;
     private LocalTime arrivalTime;
     private String name;
     private String email;
@@ -17,7 +19,7 @@ public class Ticket {
     private LocalDate date;
     private LocalTime departureTime;
     private String boardingPass;
-    private String estimatedTimeArrival;
+
 
 
 
@@ -77,6 +79,14 @@ public class Ticket {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public void setTicketPrice(int ticketPrice) {
+        this.ticketPrice = ticketPrice;
     }
 
     public String getPhoneNumber() {
