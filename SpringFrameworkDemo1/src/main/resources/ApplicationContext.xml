@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    ">
+
+
+<!--   Constructor injection -->
+
+    <!--XML IMPLEMENTATION-->
+
+
+    <bean id="student" class="com.spring.demo">
+        <constructor-arg index="0" value="1"></constructor-arg>
+        <constructor-arg index="1" value="Anna"></constructor-arg>
+        <constructor-arg index="2" value="5105319391"></constructor-arg>
+        <constructor-arg index="3" value="Brooklyn, NY, USA, 11221"></constructor-arg>
+
+<!--        String city, String state, String country, String zipcode-->
+
+    </bean>
+    <context:annotation-config />
+</beans>
