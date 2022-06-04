@@ -1,41 +1,53 @@
 package com.genspark.SpringBootApp.Service;
 
+import com.genspark.SpringBootApp.Dao.CourseDao;
 import com.genspark.SpringBootApp.Entity.Course;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CourseServiceImpl implements CourseService {
 
-    List<Course> list;
+    @Autowired
+    private CourseDao courseDao;
 
-    public CourseServiceImpl() {
-        list = new ArrayList<>();
-        list.add(new Course(101, "Philosophy", "Singh"));
-        list.add(new Course(102, "Physics", "Vivanco"));
-        list.add(new Course(103, "Parametric Design", "Marcus"));
-    }
 
     @Override
     public List<Course> getAllCourse() {
-        return list;
+        return this.courseDao.findAll();
     }
 
     @Override
     public Course getCourseById(int courseID) {
 
-        Course c = null;
+        Optional<Course> c = this.courseDao.findById(courseID);
 
-        for (Course course:list)
-        {
-            if(course.getCourse() == courseID){
-                c = course;
-                break;
-            }
+        Course course = null;
+
+        if (c.isPresent()){
+            course = c.get();
+        } else {
+            throw new RuntimeException("Course not found for id " + courseID);
         }
+        return course;
 
-        return null;
     }
+
+    @Override
+    public Course addCourse(Course course) {
+        return this.courseDao.save(course);
+    }
+
+    @Override
+    public Course updateCourse(Course course) {
+        return this.courseDao.save(course);
+    }
+
+
+
+
 }
