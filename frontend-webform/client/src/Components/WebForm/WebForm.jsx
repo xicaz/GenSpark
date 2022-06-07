@@ -27,13 +27,27 @@ export default function WebForm() {
               name="emailchain"
               value="emailchain"
             /> */}
-            <div className="policy">
+            <div className="emailcheck-container">
+              <input
+                type="checkbox"
+                id="emailcheck"
+                name="emailcheck"
+                value="emailcheck"
+              />
+              <label for="emailcheck">
+                I would like to be the first to receive updates about Derivative
+                Studios exclusive new product drops and other inspirational
+                content.
+              </label>
+            </div>
+            <div className="policy-container">
               <input type="checkbox" id="policy" name="policy" value="policy" />{" "}
               <label for="policy">
-                I confirm that i have read and understood the membership policy
+                I confirm that I have read and understood the membership policy
                 and privacy policy.
               </label>
             </div>
+
             <input type="submit" value="Submit" />
           </form>
         </div>

@@ -35,13 +35,26 @@ input[type="submit"]:hover {
 input[type="checkbox"] {
   /* background-color: #747474; */
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.policy {
-  font-size: 12px;
+.policy-container {
+  font-size: 10px;
   text-align: left;
-  display: block;
+}
+
+#emailcheck {
+  float: left;
+  margin-right: 10px;
+}
+
+.emailcheck-container {
+  font-size: 10px;
+}
+
+#policy {
+  float: left;
+  margin-right: 10px;
 }
 
 input:focus {
