@@ -1,7 +1,7 @@
 # GenSpark Web Form Assignment
 
 
-**GenSpark Web Form** is a project for a generic online form for a Customer Registration experience, using HTML/CSS and React.
+**GenSpark Web Form** is a generic online form for a Customer Registration experience, using HTML/CSS and React.
 
 [Deployed](https://xicaz.github.io/genspark-webform/)
 
