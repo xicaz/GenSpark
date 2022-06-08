@@ -1,6 +1,6 @@
 import React from "react";
 import "../WebForm/WebForm.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router";
 
 export default function Form(props) {
@@ -16,13 +16,16 @@ export default function Form(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
     if (
       props.inputs.password.valueOf() ===
         props.inputs.passwordConfirm.valueOf() &&
-      props.inputs.email.includes("@") &&
+      props.inputs.email.match(emailRegex) &&
       props.inputs.password.length >= 7
     ) {
-      const login = await props.setInputs({
+      await props.setInputs({
         ...props.inputs,
       });
       await props.setCompleted(true);

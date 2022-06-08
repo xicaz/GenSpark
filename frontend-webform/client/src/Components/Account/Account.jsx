@@ -1,9 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router";
 import "./Account.css";
 
 export default function Account(props) {
-  const navigate = useNavigate();
   let accountInfo = { ...props.inputs };
   let info = [];
 
