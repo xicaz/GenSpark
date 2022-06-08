@@ -1,10 +1,13 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Form from "./Components/WebForm/WebForm";
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Routes>
+        <Route path="/" element={<Form />} />
+      </Routes>
     </div>
   );
 }

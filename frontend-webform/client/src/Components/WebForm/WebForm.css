@@ -15,7 +15,17 @@ select {
   margin: 5px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+input[type="password"],
+select {
+  font-size: 12px;
+  width: 100%;
+  padding: 10px 10px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
   box-sizing: border-box;
 }
 
@@ -26,7 +36,6 @@ input[type="submit"] {
   padding: 10px 20px;
   margin: 8px 0;
   border: none;
-  border-radius: 2px;
   /* cursor: pointer; */
 }
 
@@ -65,8 +74,21 @@ select:focus {
   color: none;
 }
 
+.accountlinks {
+  font-size: 13px;
+}
+
+.accountlinks > label {
+  display: block;
+}
+
 div .container {
   border-radius: 5px;
   padding: 20px;
   padding-top: 50px;
+}
+
+form:invalid button {
+  opacity: 0.3;
+  pointer-events: none;
 }
