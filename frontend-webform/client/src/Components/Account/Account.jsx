@@ -1,6 +1,5 @@
 import React from "react";
 import "./Account.css";
-// import buttonSvg from "./button.svg";
 
 export default function Account(props) {
   let accountInfo = { ...props.inputs };
@@ -33,7 +32,7 @@ export default function Account(props) {
 
       <div className="arrow-container" onClick={handleClear}>
         <div className="button-container"></div>
-        <img src="./button.svg" alt="button-icon" width={50} />
+        <img src="./button.png" alt="button-icon" width={50} />
       </div>
     </div>
   );
