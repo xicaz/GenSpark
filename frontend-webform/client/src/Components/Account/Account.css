@@ -1,0 +1,30 @@
+h1 {
+  font-size: 15px;
+}
+
+.account-body {
+  width: 200px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.arrow-left {
+  margin: 0 auto;
+
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 10px solid black;
+}
+
+.arrow-container {
+  padding: 50px;
+  cursor: pointer;
+}
+
+.account-info {
+  border: black 1px solid;
+  padding: 10px;
+}

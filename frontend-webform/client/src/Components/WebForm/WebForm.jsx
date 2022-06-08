@@ -1,22 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "../WebForm/WebForm.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+// import { useNavigate } from "react-router";
 
-export default function Form() {
-  const [completed, setCompleted] = useState(false);
-  const [inputs, setInputs] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-    passwordConfirm: "",
-  });
-
+export default function Form(props) {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setInputs({
-      ...inputs,
+    props.setInputs({
+      ...props.inputs,
       [name]: value,
     });
   };
@@ -24,18 +16,15 @@ export default function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    while (inputs.password.valueOf() === inputs.passwordConfirm.valueOf()) {
-      setInputs({
-        ...inputs,
+    if (
+      props.inputs.password.valueOf() === props.inputs.passwordConfirm.valueOf()
+    ) {
+      const login = await props.setInputs({
+        ...props.inputs,
       });
-      setCompleted(true);
-      if (completed) {
-        alert("submitted");
-      }
     }
+    await props.setCompleted(true);
   };
-
-  console.log(inputs.password.valueOf());
 
   return (
     <>
@@ -57,7 +46,7 @@ export default function Form() {
               name="firstname"
               placeholder="First Name"
               onChange={handleChange}
-              value={inputs.firstname}
+              value={props.inputs.firstname}
               required
             />
             <input
@@ -66,7 +55,7 @@ export default function Form() {
               name="lastname"
               placeholder="Last Name"
               onChange={handleChange}
-              value={inputs.lastname}
+              value={props.inputs.lastname}
               required
             />
             <input
@@ -75,7 +64,7 @@ export default function Form() {
               name="email"
               placeholder="Email"
               onChange={handleChange}
-              value={inputs.email}
+              value={props.inputs.email}
               required
             />
             <input
@@ -84,7 +73,7 @@ export default function Form() {
               name="password"
               placeholder="Password"
               onChange={handleChange}
-              value={inputs.password}
+              value={props.inputs.password}
               required
             />
             <input
@@ -93,7 +82,7 @@ export default function Form() {
               name="passwordConfirm"
               placeholder="Password"
               onChange={handleChange}
-              value={inputs.passwordConfirm}
+              value={props.inputs.passwordConfirm}
               required
             />
 
@@ -120,8 +109,8 @@ export default function Form() {
                 required
               />{" "}
               <label htmlFor="policy">
-                I confirm that I have read and understood the membership policy
-                and privacy policy.
+                I confirm that I have read and understood the membership and
+                privacy policy.
               </label>
             </div>
 
