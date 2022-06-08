@@ -15,22 +15,25 @@ export default function Account(props) {
   }
 
   const handleClear = async (e) => {
-    await props.setInputs({
+    const clear = await props.setInputs({
       firstname: "",
       lastname: "",
       email: "",
       password: "",
       passwordConfirm: "",
     });
+
     await props.setCompleted(false);
 
-    await props.setToggleFetch((prevState) => !prevState);
+    if (clear) {
+      await props.setToggleFetch((prevState) => !prevState);
+    }
   };
 
   return (
     <div>
       {/* placeholders */}
-      <h1 className="header">Welcome Back, </h1>
+      <header className="header">Account Information </header>
       <div className="account-body">{info}</div>
 
       <div className="arrow-container" onClick={handleClear}>

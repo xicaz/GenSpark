@@ -21,10 +21,14 @@ export default function Main() {
           setInputs={setInputs}
           completed={completed}
           setCompleted={setCompleted}
+          toggleFetch={toggleFetch}
         />
       ) : (
         <Account
           inputs={inputs}
+          setInputs={setInputs}
+          completed={completed}
+          setCompleted={setCompleted}
           toggleFetch={toggleFetch}
           setToggleFetch={setToggleFetch}
         />

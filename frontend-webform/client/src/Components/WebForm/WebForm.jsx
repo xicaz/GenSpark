@@ -17,13 +17,18 @@ export default function Form(props) {
     e.preventDefault();
 
     if (
-      props.inputs.password.valueOf() === props.inputs.passwordConfirm.valueOf()
+      props.inputs.password.valueOf() ===
+        props.inputs.passwordConfirm.valueOf() &&
+      props.inputs.email.includes("@") &&
+      props.inputs.password.length >= 7
     ) {
       const login = await props.setInputs({
         ...props.inputs,
       });
+      await props.setCompleted(true);
+    } else {
+      alert("Invalid");
     }
-    await props.setCompleted(true);
   };
 
   return (
@@ -71,7 +76,7 @@ export default function Form(props) {
               type="password"
               id="password"
               name="password"
-              placeholder="Password"
+              placeholder="Password (7 char min)"
               onChange={handleChange}
               value={props.inputs.password}
               required
@@ -80,7 +85,7 @@ export default function Form(props) {
               type="password"
               id="passwordConfirm"
               name="passwordConfirm"
-              placeholder="Password"
+              placeholder="Password Confirmation"
               onChange={handleChange}
               value={props.inputs.passwordConfirm}
               required
