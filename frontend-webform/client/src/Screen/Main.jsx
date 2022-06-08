@@ -3,7 +3,6 @@ import Account from "../Components/Account/Account";
 import Form from "../Components/WebForm/WebForm";
 
 export default function Main() {
-  const [toggleFetch, setToggleFetch] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [inputs, setInputs] = useState({
     firstname: "",
@@ -21,7 +20,6 @@ export default function Main() {
           setInputs={setInputs}
           completed={completed}
           setCompleted={setCompleted}
-          toggleFetch={toggleFetch}
         />
       ) : (
         <Account
@@ -29,8 +27,6 @@ export default function Main() {
           setInputs={setInputs}
           completed={completed}
           setCompleted={setCompleted}
-          toggleFetch={toggleFetch}
-          setToggleFetch={setToggleFetch}
         />
       )}
     </div>

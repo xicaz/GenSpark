@@ -1,5 +1,6 @@
 import React from "react";
 import "./Account.css";
+// import buttonSvg from "./button.svg";
 
 export default function Account(props) {
   let accountInfo = { ...props.inputs };
@@ -13,7 +14,7 @@ export default function Account(props) {
   }
 
   const handleClear = async (e) => {
-    const clear = await props.setInputs({
+    await props.setInputs({
       firstname: "",
       lastname: "",
       email: "",
@@ -22,10 +23,6 @@ export default function Account(props) {
     });
 
     await props.setCompleted(false);
-
-    if (clear) {
-      await props.setToggleFetch((prevState) => !prevState);
-    }
   };
 
   return (
@@ -35,7 +32,8 @@ export default function Account(props) {
       <div className="account-body">{info}</div>
 
       <div className="arrow-container" onClick={handleClear}>
-        <div className="arrow-left"></div>
+        <div className="button-container"></div>
+        <img src="./button.svg" alt="button-icon" width={50} />
       </div>
     </div>
   );

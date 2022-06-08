@@ -1,5 +1,5 @@
 header {
-  font-size: 15px;
+  font-size: 20px;
   padding-top: 50px;
 }
 
@@ -10,18 +10,14 @@ header {
   padding: 10px 20px;
 }
 
-.arrow-left {
+.button-container {
   margin: 0 auto;
-
   width: 0;
   height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 10px solid black;
 }
 
 .arrow-container {
-  padding: 50px;
+  padding: 10px 20px 0px 20px;
   cursor: pointer;
 }
 
