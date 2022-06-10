@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import "./TopNav.css";
 
 export default function TopNav() {
-  const arrow = "-> ";
+  const arrow = () => {
+    <span> &#10141; </span>;
+  };
   const email = "jexica.ayran@gmail.com";
   const resume = "resume";
   const portfolio = "portfolio";

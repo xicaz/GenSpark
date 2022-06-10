@@ -5,15 +5,14 @@ export default function GlassButton() {
   return (
     <div className="w-screen  relative">
       <div className="p-10 sm:px-5 glass-body w-screen text-2xl flex  flex-row justify-center">
-        <div className="top-0 left-0 absolute w-44 h-44 bg-yellow animate-spin">
-          hi
-        </div>
         <div className="mx-5 p-10 top-0 left-0  absolute glassmorphism  w-96 border border-black rounded-large">
-          <p className="italic">
-            Hello, I’m a creative developer, specializing in React/MERN tech
-            stack, Java, and web to product design. Based in NYC + Open to
-            remote work.
-          </p>
+          <div className="glassmorphism w-full">
+            <p className="italic">
+              Hello, I’m a creative developer, specializing in React/MERN tech
+              stack, Java, and web to product design. Based in NYC + Open to
+              remote work.
+            </p>
+          </div>
         </div>
         <div className="">
           <div className=" mx-5 w-96 h-24">
