@@ -1,0 +1,36 @@
+.glassmorphism {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(100px);
+  position: relative;
+  background: inherit;
+  overflow: hidden;
+}
+/* @supports (background: -moz-element(#background)) {  /* ADDED */
+.glassmorphism {
+  /* ADDED */
+  position: relative; /* MOVED */
+}
+*/ .glassmorphism::before {
+  background: inherit;
+  box-shadow: inset 0 0 0 50vw rgba(255, 255, 255, 0.558);
+  content: "";
+  filter: blur(50px);
+  height: calc(100% + 2 * 10px); /* REVISED */
+  width: calc(100% + 2 * 10px); /* REVISED */
+  position: absolute;
+  top: -10px; /* REVISED */
+  left: -10px; /* REVISED */
+}
+.glassmorphism span {
+  position: absolute;
+}
+
+.glass-body {
+  font-family: "ABC Social";
+}
+
+.name-logo {
+  font-family: "ABC Social";
+  font-size: 90px;
+  line-height: 80px;
+}

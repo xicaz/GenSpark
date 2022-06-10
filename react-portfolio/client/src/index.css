@@ -2,6 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "ABC Prophet";
+  src: url("./Fonts/ABCProphetVariable-Trial.ttf");
+  font-weight: thin normal medium bold;
+}
+
+@font-face {
+  font-family: "ABC Ginto";
+  src: url("./Fonts/ABCGintoNormalVariable-Trial.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ABC Ginto Nord";
+  src: url("./Fonts/ABCGintoNordVariable-Trial.ttf");
+  font-weight: thin normal medium bold;
+}
+
+@font-face {
+  font-family: "ABC Whyte Mono";
+  src: url("./Fonts/ABCWhyteMono-Regular-Trial.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ABC Social";
+  src: url("./Fonts/abcSocialMono/ABCSocialMono-Bold-Trial.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "ABC Social";
+  src: url("./Fonts/abcSocialMono/ABCSocialMono-Book-Trial.otf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ABC Social";
+  src: url("./Fonts/abcSocialMono/ABCSocialMono-Medium-Trial.otf");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: "ABC Social";
+  src: url("./Fonts/abcSocialMono/ABCSocialMono-RegularItalic-Trial.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ABC Monument Grotesk Mono";
+  src: url("./Fonts/abcMonumentGroteskMono/ABCMonumentGroteskMono-Bold-Trial.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk Mono";
+  src: url("./Fonts/abcMonumentGroteskMono/ABCMonumentGroteskMono-Medium-Trial.otf");
+  font-weight: medium;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk Mono";
+  src: url("./Fonts/abcMonumentGroteskMono/ABCMonumentGroteskMono-Medium-Trial.otf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ABC Monument Grotesk Mono";
+  src: url("./Fonts/abcMonumentGroteskMono/ABCMonumentGroteskMono-Light-Trial.otf");
+  font-weight: thin;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
