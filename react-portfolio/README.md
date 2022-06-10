@@ -2,7 +2,7 @@
 
 **Jexica's React portfolio** is a online website designed for previewing my programming portfolio, specifically for Genspark's Java intensive course program.
 
-
+[Website Deployed](https://jexica-portfolio.netlify.app)
 
 <br>
 
