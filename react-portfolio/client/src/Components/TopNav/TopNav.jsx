@@ -12,7 +12,7 @@ export default function TopNav() {
   const about = "about";
   return (
     <div className="nav-container p-5">
-      <div className="nav-body flex justify-around grid-cols-5 text-lg tracking-wide font-medium  bg-black whitespace-nowrap rounded-full py-3 pr-14 pl-10 text-white w-full">
+      <div className="nav-body flex justify-around grid-cols-5 text-lg tracking-wide font-bold  bg-black whitespace-nowrap rounded-full py-3 pr-14 pl-10 text-white w-full">
         <Link to="">
           <div>
             <span>{arrow}</span>
