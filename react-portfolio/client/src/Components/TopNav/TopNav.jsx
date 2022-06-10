@@ -15,7 +15,7 @@ export default function TopNav() {
       <div className="nav-body flex justify-around grid-cols-5 text-lg tracking-wide font-bold  bg-black whitespace-nowrap rounded-full py-3 pr-14 pl-10 text-white w-full">
         <Link to="">
           <div>
-            <span>{arrow}</span>
+            {arrow}
             <span className="underline-offset-8 hover:underline">{email}</span>
           </div>
         </Link>
