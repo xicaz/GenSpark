@@ -3,7 +3,7 @@ import "./GlassButton.css";
 
 export default function GlassButton() {
   return (
-    <div className="w-screen  relative">
+    <div className="w-screen relative">
       <div className="z-10 text-2xl pb-10  glass-body  w-screen  flex  flex-col lg:flex-row md:flex-col sm:flex-col justify-center">
         <div className="">
           <div className=" mx-5 mt-10  w-96">

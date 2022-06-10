@@ -5,9 +5,11 @@ import TopNav from "../TopNav/TopNav";
 export default function Layout(props) {
   return (
     <>
-      <TopNav />
-      {props.children}
-      <InfoFooter />
+      <div className={props.className}>
+        <TopNav />
+        {props.children}
+        <InfoFooter />
+      </div>
     </>
   );
 }

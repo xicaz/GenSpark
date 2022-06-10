@@ -5,7 +5,7 @@ import "./InfoFooter.css";
 export default function InfoFooter() {
   return (
     <Link to="/" exact>
-      <div className="hover:underline underline-offset-8 sticky bottom-0 left-0 footer-body text-2xl font-medium bg-black whitespace-nowrap  py-3 pr-14 pl-10 text-white w-full">
+      <div className="m-0 hover:underline underline-offset-8 sticky bottom-0 left-0 footer-body text-2xl font-medium bg-black whitespace-nowrap  py-3 pr-14 pl-10 text-white w-full">
         <p className=" flex justify-around">
           {/* JEXICA AYRAN () =&gt; BArch &#8594; Design &#8594; Full-Stack Web
           Development &#8594; Creative Developer */}
