@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "ABC Whyte Inktrap";
+  src: url("./Fonts/ABCWhyteInktrapSemi-Mono-Regular-Trial.otf");
+}
+
+@font-face {
   font-family: "ABC Prophet";
   src: url("./Fonts/ABCProphetVariable-Trial.ttf");
   font-weight: thin normal medium bold;

@@ -1,23 +1,5 @@
-@keyframes bg-move {
-  from {
-    background-position: 0% 0%;
-  }
-  to {
-    background-position: 187% 0%;
-  }
-}
-
 .design-text {
   font-family: "ABC Ginto Nord";
-}
-
-/* FIX THIS AFTER */
-.glassmorphism {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(100px);
-  position: relative;
-  background: inherit;
-  overflow: hidden;
 }
 
 .glassmorphism-bg {
@@ -30,31 +12,8 @@
 .glassmorphism-bg2 {
   background-image: url("https://i.imgur.com/991zYRj.png");
 
-  /* width: 1000px; */
-  overflow: hidden;
   background-position: 0px 0px;
   background-size: 125%;
-  /* transform: rotate(30deg); */
-}
-
-/* @supports (background: -moz-element(#background)) {  /* ADDED */
-.glassmorphism {
-  /* ADDED */
-  position: relative; /* MOVED */
-}
-*/ .glassmorphism::before {
-  background: inherit;
-  box-shadow: inset 0 0 0 50vw rgba(255, 255, 255, 0.558);
-  content: "";
-  filter: blur(50px);
-  height: calc(100% + 2 * 10px);
-  width: calc(100% + 2 * 10px);
-  position: absolute;
-  top: -10px;
-  left: -10px;
-}
-.glassmorphism span {
-  position: absolute;
 }
 
 .glass-body {
@@ -66,6 +25,3 @@
   font-size: 90px;
   line-height: 80px;
 }
-/*  */
-/*  */
-/*  */

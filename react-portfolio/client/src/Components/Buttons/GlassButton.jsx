@@ -20,7 +20,7 @@ export default function GlassButton() {
             <p className="name-logo  font-bold pr-5"> jexica ayran</p>
           </div>
         </div>
-        <div className="glassmorphism-bg mx-5 p-10 top-0 left-0  absolute glassmorphism  w-96 border border-black rounded-large">
+        <div className="glassmorphism-bg mx-5 p-10 top-0 left-0  relative  w-96 border border-black rounded-large">
           <div className=" w-full z-10">
             <p className="italic text-3xl">
               Hello, <br className="mb-3" />
