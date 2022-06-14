@@ -1,10 +1,10 @@
 import React from "react";
 import Layout from "../Components/Layout/Layout";
 
-export default function About() {
+export default function Games() {
   return (
     <div>
-      <Layout>About</Layout>
+      <Layout>Games</Layout>
     </div>
   );
 }
