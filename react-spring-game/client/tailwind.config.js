@@ -1,6 +1,9 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    maxWidth: {
+      "4/5": "80%",
+    },
     backgroundColor: (theme) => ({
       yellow: "#FFE715",
       yellow100: "#ffff94",
@@ -15,6 +18,7 @@ module.exports = {
       trp: "transparent",
       black: "#000000",
       white: "#ffffff",
+      grey: "#A9A9A9",
     }),
     borderColor: (theme) => ({
       yellow: "#FFE715",
@@ -29,6 +33,7 @@ module.exports = {
       trp: "transparent",
       black: "#000000",
       white: "#ffffff",
+      grey: "#1C1917",
     }),
     textColor: (theme) => ({
       yellow: "#FFE715",
@@ -47,4 +52,4 @@ module.exports = {
     }),
   },
   plugins: [],
-};
+}

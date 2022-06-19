@@ -1,2 +1,10 @@
-// GET https://api.rawg.io/api/platforms?key=YOUR_API_KEY
-// GET https://api.rawg.io/api/games?key=YOUR_API_KEY&dates=2019-09-01,2019-09-30&platforms=18,1,7
+//define the api url
+export const baseURL = `https://api.rawg.io/api/games`;
+export const API_KEY = "?key=6b96a568344a435383fe7a460be08824";
+//define const config object that has our authorization
+
+export const config = {
+  headers: {
+    Authorization: `Bearer 6b96a568344a435383fe7a460be08824`,
+  },
+};

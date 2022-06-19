@@ -6,6 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+// const cors = require("cors");
+// App.use(cors());
+
 root.render(
   <React.StrictMode>
     <Router>
